@@ -1,0 +1,150 @@
+# Cursor Rules for Unorepo Builder
+
+## Project Overview
+This is a visual Unorepo orchestration platform built with Turborepo, Next.js 15, and modern web technologies. The platform enables teams to manage UI components, design systems, packages, and libraries through a centralized interface.
+
+## Tech Stack
+- **Monorepo**: Turborepo + pnpm workspaces
+- **Frontend**: Next.js 15 (App Router)
+- **UI Library**: shadcn/ui + Tailwind CSS v4
+- **State Management**: Zustand
+- **Database**: Supabase (PostgreSQL)
+- **Storage**: Vercel Blob
+- **Visual Builder**: React Flow
+- **Validation**: Zod
+- **Deployment**: Vercel
+
+## Code Style & Standards
+
+### TypeScript
+- Use strict TypeScript configuration
+- Prefer type inference over explicit typing when clear
+- Use Zod schemas for runtime validation
+- Export types from dedicated type files
+- Use proper generic constraints and utility types
+
+### React/Next.js
+- Use App Router patterns (app directory)
+- Implement proper error boundaries
+- Use Server Components by default, Client Components when needed
+- Follow React best practices for hooks and state management
+- Use proper loading and error states
+
+### Styling
+- Use Tailwind CSS v4 with shadcn/ui components
+- Follow mobile-first responsive design
+- Use CSS variables for theming
+- Implement proper dark mode support
+- Use semantic color tokens
+
+### File Organization
+```
+apps/
+├── web/                    # Main Next.js application
+packages/
+├── ui/                     # Shared UI components
+├── config/                 # Shared configs (ESLint, TypeScript, etc.)
+├── schemas/                # Zod validation schemas
+├── types/                  # TypeScript types
+├── utils/                  # Utility functions
+├── registry/               # Package registry logic
+├── generator/              # Project generator engine
+└── flow-nodes/             # React Flow custom nodes
+templates/                  # Project templates
+```
+
+## Development Guidelines
+
+### Package Management
+- Use pnpm for all package management
+- Keep dependencies up to date
+- Use exact versions for critical dependencies
+- Prefer workspace packages over external dependencies when possible
+
+### Component Development
+- Create reusable, composable components
+- Use proper prop interfaces with JSDoc comments
+- Implement proper accessibility (ARIA labels, keyboard navigation)
+- Use React.forwardRef for components that need ref access
+- Follow the compound component pattern for complex UI elements
+
+### State Management
+- Use Zustand for global state
+- Keep state as close to where it's used as possible
+- Use proper TypeScript types for state
+- Implement proper state persistence when needed
+
+### Database & API
+- Use Supabase for database operations
+- Implement proper error handling and loading states
+- Use Zod schemas for API validation
+- Follow RESTful API patterns
+- Implement proper caching strategies
+
+### Testing
+- Write unit tests for utility functions
+- Write integration tests for API endpoints
+- Write component tests for UI components
+- Use proper test data and mocking
+- Aim for high test coverage on critical paths
+
+## Security & Performance
+
+### Security
+- Validate all user inputs with Zod schemas
+- Use proper authentication and authorization
+- Implement rate limiting for API endpoints
+- Use environment variables for sensitive data
+- Follow OWASP security guidelines
+
+### Performance
+- Use proper image optimization
+- Implement proper caching strategies
+- Use React.memo and useMemo when appropriate
+- Optimize bundle size with proper code splitting
+- Use proper loading states and skeleton screens
+
+## Git & Deployment
+
+### Git Workflow
+- Use conventional commits
+- Create feature branches for new features
+- Use proper PR descriptions with screenshots
+- Keep commits atomic and focused
+- Use proper branch protection rules
+
+### Deployment
+- Use Vercel for deployment
+- Implement proper environment variable management
+- Use proper build optimization
+- Implement proper error monitoring
+- Use proper analytics and monitoring
+
+## AI Assistant Guidelines
+
+### When helping with this project:
+1. Always consider the monorepo structure and workspace dependencies
+2. Follow the established patterns and conventions
+3. Consider the visual builder aspect and React Flow integration
+4. Think about the template system and code generation
+5. Consider the Git integration and deployment automation
+6. Maintain consistency with the existing codebase
+7. Consider performance and accessibility implications
+8. Think about the user experience and visual design
+
+### Code Generation:
+- Generate code that follows the established patterns
+- Include proper TypeScript types
+- Add proper error handling
+- Include proper loading states
+- Consider the monorepo structure
+- Use the established UI components and styling patterns
+
+### Debugging:
+- Consider the monorepo build system
+- Check workspace dependencies
+- Consider the deployment pipeline
+- Check environment variables and configuration
+- Consider the database schema and API endpoints
+
+Remember: This is a visual, collaborative platform for managing Unorepos. Always consider the user experience and the visual aspects of the application when making suggestions or generating code.

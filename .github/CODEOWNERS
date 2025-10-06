@@ -1,0 +1,24 @@
+# Code Owners
+
+# Global code owners
+* @team-leads
+
+# Package-specific owners
+/packages/ui/ @ui-team
+/packages/config/ @devops-team
+/packages/schemas/ @backend-team
+/packages/types/ @backend-team
+/packages/utils/ @backend-team
+/packages/registry/ @backend-team
+/packages/generator/ @backend-team
+/packages/flow-nodes/ @ui-team
+
+# App-specific owners
+/apps/web/ @frontend-team
+
+# Configuration files
+/.github/ @devops-team
+/turbo.json @devops-team
+/pnpm-workspace.yaml @devops-team
+/package.json @devops-team
+/.cursorrules @team-leads
