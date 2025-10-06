@@ -1,0 +1,10 @@
+{
+  "extends": "@unorepo/config/typescript/react-library.json",
+  "compilerOptions": {
+    "paths": {
+      "@unorepo/utils": ["../utils"]
+    }
+  },
+  "include": ["**/*.ts", "**/*.tsx"],
+  "exclude": ["node_modules"]
+}

@@ -1,0 +1,27 @@
+{
+  "name": "@unorepo/app-001",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Lightweight demo app with minimal dependencies",
+  "scripts": {
+    "dev": "next dev --port 3002",
+    "build": "next build",
+    "start": "next start --port 3002",
+    "lint": "next lint",
+    "type-check": "tsc --noEmit",
+    "clean": "rm -rf .next .turbo node_modules"
+  },
+  "dependencies": {
+    "@unorepo/ui": "workspace:*",
+    "next": "15.5.4",
+    "react": "19.1.0",
+    "react-dom": "19.1.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22",
+    "@types/react": "^18",
+    "@types/react-dom": "^18",
+    "@unorepo/config": "workspace:*",
+    "typescript": "^5"
+  }
+}

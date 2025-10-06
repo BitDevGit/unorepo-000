@@ -1,172 +1,310 @@
-# unorepo-000
+# Unorepo Builder
 
-# Unorepo Builder - Project Summary
+> **A visual monorepo orchestration platform for managing UI components, design systems, and packages.**
 
-## What We're Building
+Transform monorepo management from command-line complexity into an intuitive, drag-and-drop experience.
 
-A **visual Unorepo orchestration platform** that enables teams to manage UI components, design systems, packages, and libraries through a centralized interface. The platform allows users to compose complex software projects by linking standalone tools together using visual workflows and step-based processes.
+---
 
-## Core Vision
+## 🚀 Quick Start
 
-Transform Unorepo management from a command-line task into a visual, collaborative experience where developers can:
-- Browse and manage packages through an intuitive UI
-- Compose projects by dragging and dropping components
-- Visualize dependencies and relationships
-- Generate production-ready code with proper configurations
-- Deploy directly to Vercel with one click
+\`\`\`bash
+# Install dependencies
+pnpm install
 
-## Why This Matters
+# Run development server
+pnpm dev
 
-### Current Pain Points
-- **Complexity**: Managing Unorepos requires deep CLI knowledge
-- **Discovery**: Hard to find and understand available packages
-- **Composition**: No visual way to see how components fit together
-- **Onboarding**: New developers struggle with Unorepo structure
-- **Consistency**: Hard to enforce standards across packages
-
-### Our Solution
-- **Visual Interface**: Drag-and-drop component composition
-- **Centralized Registry**: Browse all packages in one place
-- **Smart Generation**: Automated project scaffolding with best practices
-- **Real-time Validation**: Catch dependency issues before building
-- **Git Integration**: Seamless GitHub and Vercel deployment
-
-## Technical Architecture
-
-### Unorepo Structure (Turborepo)
-\`\`\`
-Unorepo-builder/
-├── apps/
-│   └── web/                 # Main Next.js application
-├── packages/
-│   ├── ui/                  # Shared UI components
-│   ├── config/              # Shared configs
-│   ├── schemas/             # Zod validation schemas
-│   ├── types/               # TypeScript types
-│   ├── utils/               # Utility functions
-│   ├── registry/            # Package registry logic
-│   ├── generator/           # Project generator engine
-│   └── flow-nodes/          # React Flow custom nodes
-└── templates/               # Project templates
+# Open http://localhost:3000
 \`\`\`
 
-### Tech Stack
-- **Unorepo**: Turborepo + pnpm workspaces
-- **Frontend**: Next.js 15 (App Router)
-- **UI Library**: shadcn/ui + Tailwind CSS v4
-- **State Management**: Zustand
+## 📚 Documentation Hub
+
+**New here? Start with the Developer Guide - it's your complete reference.**
+
+| Document | Purpose | Audience |
+|----------|---------|----------|
+| **[DEVELOPER_GUIDE.md](./DEVELOPER_GUIDE.md)** | 🎯 **START HERE** - Complete development reference | All developers |
+| [CONTRIBUTING.md](./CONTRIBUTING.md) | How to contribute code | Contributors |
+| [TODO.md](./TODO.md) | Current tasks & roadmap | Team members |
+| [PROJECT.md](./PROJECT.md) | Vision & architecture overview | Stakeholders |
+
+**Technical Documentation:**
+- [Architecture Overview](./docs/architecture/overview.md) - Monorepo architecture & design
+- [Tech Stack](./docs/architecture/tech-stack.md) - Technology choices & rationale
+- [Getting Started](./docs/guides/getting-started.md) - Setup & installation guide
+- [Development Guide](./docs/guides/development.md) - Development workflows
+- [Adding Packages](./docs/guides/adding-packages.md) - How to add dependencies
+- [API Documentation](./docs/guides/api-documentation.md) - API standards & guidelines
+- [Vercel Tools](./docs/guides/vercel-tools.md) - Vercel ecosystem integration
+- [Coding Standards](./docs/standards/coding-standards.md) - Code conventions & style guide
+- [Deployment Guide](./docs/deployment.md) - How to deploy to production
+
+---
+
+## 🎯 What We're Building
+
+A platform that enables teams to:
+- 📦 **Browse packages** through an intuitive UI
+- 🎨 **Compose projects** by dragging and dropping components
+- 🔗 **Visualize dependencies** and relationships
+- ⚡ **Generate code** with best practices built-in
+- 🚀 **Deploy instantly** to Vercel with one click
+
+---
+
+## 🏗️ Tech Stack
+
+- **Monorepo**: Turborepo + pnpm workspaces
+- **Framework**: Next.js 15 (App Router)
+- **Language**: TypeScript 5.x
+- **Styling**: Tailwind CSS v4 + shadcn/ui
 - **Database**: Supabase (PostgreSQL)
 - **Storage**: Vercel Blob
-- **Visual Builder**: React Flow
-- **Validation**: Zod
 - **Deployment**: Vercel
 
-### Key Features
+**Why these choices?** See [Tech Stack Documentation](./docs/architecture/tech-stack.md)
 
-#### 1. Package Registry
-- CRUD operations for packages, components, libraries
-- Tagging and categorization
-- Dependency tracking
-- Version management
-- Search and filtering
+---
 
-#### 2. Template System
-- JSON-based template definitions
-- Variable substitution
-- File structure generation
-- Dependency resolution
-- Template marketplace
+## 📁 Monorepo Structure
 
-#### 3. Visual Builder (React Flow)
-- Drag-and-drop interface
-- Node-based composition
-- Real-time validation
-- Dependency visualization
-- Export to code
+\`\`\`
+unorepo-builder/
+├── app/                    # Next.js App Router (Builder Platform)
+│   ├── page.tsx           # Homepage
+│   ├── layout.tsx         # Root layout
+│   └── globals.css        # Global styles
+├── components/            # React components
+│   ├── ui/                # shadcn/ui components
+│   └── ...                # Custom components
+├── lib/                   # Utilities & helpers
+├── hooks/                 # Custom React hooks
+├── public/                # Static assets
+├── apps/                  # Demo applications
+│   ├── app-000/          # Full-featured demo (uses all packages)
+│   └── app-001/          # Lightweight demo (minimal dependencies)
+├── packages/              # Shared workspace packages
+│   ├── ui/               # Shared UI components + Storybook
+│   ├── utils/            # Shared utilities
+│   └── config/           # Shared TypeScript configs
+├── docs/                  # Organized documentation
+│   ├── architecture/     # Architecture docs & ADRs
+│   ├── guides/           # Development guides
+│   └── standards/        # Coding standards
+├── .github/               # GitHub config & workflows
+└── ...config files
+\`\`\`
 
-#### 4. Project Generator
-- Automated scaffolding
-- Configuration generation
-- Package installation
-- Build pipeline setup
-- Preview before generation
+**Why this structure?**
+- Main Next.js app at root (Builder Platform) for v0 compatibility
+- `apps/` contains demo applications showing monorepo usage patterns
+- `packages/` for shared code across applications
+- Ready to scale with additional apps and packages
 
-#### 5. Git Integration
-- GitHub repository creation
-- Automated commits and PRs
-- Branch management
-- Vercel deployment
-- Environment variable management
+See [Architecture Overview](./docs/architecture/overview.md) for details.
 
-## Development Phases
+---
 
-### Phase 1: Foundation (Current)
-- Turborepo setup
+## 🛠️ Development
+
+### Prerequisites
+- Node.js 20.x or later
+- pnpm 9.x or later
+- Git
+
+### Available Commands
+
+\`\`\`bash
+# Development
+pnpm dev              # Start dev server (Next.js)
+pnpm build            # Build for production
+pnpm start            # Start production server
+pnpm lint             # Run ESLint
+pnpm format           # Format with Prettier
+pnpm type-check       # TypeScript type checking
+
+# Quality
+pnpm lint:fix         # Fix linting issues
+pnpm format:check     # Check formatting
+pnpm audit            # Security audit
+
+# Cleanup
+pnpm clean            # Remove build artifacts
+\`\`\`
+
+### Environment Variables
+
+Copy `env.example` to `.env.local` and configure:
+
+\`\`\`bash
+cp env.example .env.local
+\`\`\`
+
+Required variables are added automatically when you connect integrations via v0.
+
+See [DEVELOPER_GUIDE.md](./DEVELOPER_GUIDE.md#environment-variables) for details.
+
+---
+
+## 📊 Current Status
+
+**Phase**: Phase 1 - Foundation  
+**Progress**: Setup Complete ✅
+
+### ✅ Completed
+- ✅ Turborepo monorepo setup
+- ✅ Next.js 15 with App Router
+- ✅ Tailwind CSS v4 + shadcn/ui
+- ✅ TypeScript configuration
+- ✅ ESLint + Prettier + Husky
+- ✅ CI/CD workflows (GitHub Actions)
+- ✅ Comprehensive documentation
+- ✅ Vercel Blob integration
+
+### 🚧 Next Up
+- Database integration (Supabase)
+- Authentication system
+- Package registry foundation
+- Visual builder prototype
+
+See [TODO.md](./TODO.md) for detailed roadmap.
+
+---
+
+## 🤝 Contributing
+
+We welcome contributions! Here's how:
+
+1. **Read the guides**:
+   - [DEVELOPER_GUIDE.md](./DEVELOPER_GUIDE.md) - Complete development reference
+   - [CONTRIBUTING.md](./CONTRIBUTING.md) - Contribution guidelines
+   - [Coding Standards](./docs/standards/coding-standards.md) - Code style guide
+
+2. **Check available tasks**: [TODO.md](./TODO.md)
+
+3. **Set up your environment**:
+   \`\`\`bash
+   git clone <repo-url>
+   cd unorepo-builder
+   pnpm install
+   pnpm dev
+   \`\`\`
+
+4. **Make your changes**:
+   - Follow coding standards
+   - Write meaningful commits (Conventional Commits)
+   - Update documentation
+   - Add tests where appropriate
+
+5. **Submit a PR**:
+   - Clear description
+   - Link related issues
+   - Wait for review
+
+See [CONTRIBUTING.md](./CONTRIBUTING.md) for detailed guidelines.
+
+---
+
+## 🚀 Deployment
+
+### Vercel (Recommended)
+
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new)
+
+**Via v0:**
+1. Click "Publish" button in v0 UI
+2. Configure environment variables
+3. Deploy!
+
+**Via CLI:**
+\`\`\`bash
+# Install Vercel CLI
+pnpm add -g vercel
+
+# Deploy
+vercel --prod
+\`\`\`
+
+See [Deployment Guide](./docs/deployment.md) for detailed instructions.
+
+---
+
+## 🔐 Security
+
+Found a security vulnerability? **Do not** open a public issue.
+
+See [.github/SECURITY.md](.github/SECURITY.md) for reporting instructions.
+
+---
+
+## 📄 License
+
+MIT License - see [LICENSE](./LICENSE) for details.
+
+---
+
+## 🙏 Acknowledgments
+
+Built with:
+- [Next.js](https://nextjs.org/) - React framework
+- [Turborepo](https://turbo.build/) - Monorepo tool
+- [shadcn/ui](https://ui.shadcn.com/) - UI components
+- [Tailwind CSS](https://tailwindcss.com/) - Styling
+- [Supabase](https://supabase.com/) - Database & auth
+- [Vercel](https://vercel.com/) - Deployment platform
+
+---
+
+## 📞 Support
+
+- 📖 **Documentation**: [DEVELOPER_GUIDE.md](./DEVELOPER_GUIDE.md)
+- 🐛 **Bug Reports**: [GitHub Issues](https://github.com/yourusername/unorepo-builder/issues)
+- 🔒 **Security**: [SECURITY.md](.github/SECURITY.md)
+
+---
+
+## 🗺️ Roadmap
+
+### Phase 1: Foundation ✅
+- Monorepo setup
+- Next.js + TypeScript
+- CI/CD pipelines
+
+### Phase 2: Database & Auth (Current)
+- Supabase integration
+- Authentication system
 - Database schema
-- Authentication
-- Basic UI shell
 
-### Phase 2: Package Registry
+### Phase 3: Package Registry
 - CRUD operations
-- Search and filtering
+- Search & filtering
 - Metadata management
 
-### Phase 3: Templates
+### Phase 4: Templates
 - Template management
 - Template engine
 - Preview system
 
-### Phase 4: Visual Builder
+### Phase 5: Visual Builder
 - React Flow integration
-- Custom nodes
-- Connection validation
+- Drag-and-drop interface
+- Real-time validation
 
-### Phase 5: Generator
+### Phase 6: Generator
 - Code generation
 - Build pipeline
 - Preview system
 
-### Phase 6: Git Integration
+### Phase 7: Git Integration
 - GitHub connection
 - Deployment automation
 - CI/CD setup
 
-## Success Metrics
-
-- **Adoption**: Number of active users and projects created
-- **Efficiency**: Time saved vs manual Unorepo setup
-- **Quality**: Generated code quality and best practice adherence
-- **Satisfaction**: User feedback and NPS scores
-- **Performance**: Build times and deployment success rates
-
-## Target Users
-
-- **Frontend Developers**: Building component libraries
-- **DevOps Engineers**: Managing infrastructure packages
-- **Design System Teams**: Maintaining design tokens and components
-- **Product Teams**: Rapid prototyping and MVP development
-- **Open Source Maintainers**: Managing multi-package projects
-
-## Competitive Advantages
-
-1. **Visual-First**: Only platform with drag-and-drop Unorepo composition
-2. **Vercel Native**: Deep integration with Vercel ecosystem
-3. **Best Practices**: Enforces standards through templates
-4. **Real-time Validation**: Catch issues before generation
-5. **One-Click Deploy**: From design to production instantly
-
-## Long-term Vision
-
-Evolve into a complete **no-code software composition platform** where:
-- Non-technical users can build complex applications
-- AI assists with component selection and composition
-- Marketplace for templates and components
-- Collaborative editing and team workspaces
-- Enterprise features (SSO, audit logs, compliance)
+See [PROJECT.md](./PROJECT.md) for complete vision and [TODO.md](./TODO.md) for detailed tasks.
 
 ---
 
-**Last Updated**: 2025-01-06
-**Status**: Phase 1 - Foundation
-**Team**: Core Development Team
+**Built with ❤️ by the Unorepo Builder team**
 
+*Making monorepo management visual, intuitive, and accessible to everyone.*

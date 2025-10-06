@@ -1,0 +1,25 @@
+{
+  "name": "@unorepo/utils",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Shared utility functions and helpers",
+  "main": "./index.ts",
+  "types": "./index.ts",
+  "exports": {
+    ".": "./index.ts",
+    "./lib/*": "./lib/*.ts"
+  },
+  "scripts": {
+    "lint": "eslint .",
+    "type-check": "tsc --noEmit",
+    "clean": "rm -rf .turbo node_modules"
+  },
+  "dependencies": {
+    "clsx": "^2.1.1",
+    "tailwind-merge": "^3.3.1"
+  },
+  "devDependencies": {
+    "@unorepo/config": "workspace:*",
+    "typescript": "^5"
+  }
+}
